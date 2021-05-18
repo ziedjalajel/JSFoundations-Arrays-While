@@ -10,8 +10,12 @@
  */
 function isArrayLengthOdd(numbers) {
   // Your code here
-}
+ if(numbers.length%2!==0){
+   return true
+ }return false
 
+}
+console.log(isArrayLengthOdd([1,2,3,6]))
 /**
  * isArrayLengthEven(numbers):
  * - receives array `numbers`
@@ -24,7 +28,9 @@ function isArrayLengthOdd(numbers) {
  */
 function isArrayLengthEven(numbers) {
   // Your code here
+  return !isArrayLengthOdd(numbers)
 }
+console.log(isArrayLengthEven([1,2,3,4]))
 
 /**
  * addLailaToArray(instructors):
@@ -36,7 +42,11 @@ function isArrayLengthEven(numbers) {
  */
 function addLailaToArray(instructors) {
   // Your code here
+  let arr = instructors
+  arr.push('Laila')
+  return arr 
 }
+console.log(addLailaToArray(['test','test']))
 
 /**
  * eliminateTeam(teams):
@@ -47,9 +57,9 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+  return teams.pop()
 }
-
+console.log(eliminateTeam(['test','test','test','not a test']))
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
  * - receives array `fruits`
@@ -62,8 +72,13 @@ function eliminateTeam(teams) {
  */
 function secondHalfOfArrayIfItIsEven(fruits) {
   // Your code here
+  let x
+if(fruits.length%2!==0){
+x = []
+}else x = fruits.slice(fruits.length/2)
+return x
 }
-
+console.log(secondHalfOfArrayIfItIsEven(['zaid','abd','khaled']))
 /**
  * youGottaCalmDown(shout):
  * - receives a string `shout`
@@ -80,8 +95,20 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  */
 function youGottaCalmDown(shout) {
   // Your code here
+  if(!shout.endsWith('!')){return shout}
+  let found = true
+  let i = 0
+  let str='';
+  while (found){
+    if(shout[i]==='!'){
+      found=false
+    }
+    str=str+shout[i]
+    i++
+  }
+return str
 }
-
+console.log(youGottaCalmDown('helloo!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'))
 module.exports = {
   isArrayLengthOdd,
   isArrayLengthEven,
